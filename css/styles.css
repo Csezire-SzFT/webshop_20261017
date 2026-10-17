@@ -1,0 +1,129 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas:    "he  he"
+                            "na  na"
+                            "ar  as"
+                            "fo  fo";
+    color: white;
+}
+
+header {
+    grid-area: he;
+    background-color: #23395B;
+}
+
+nav {
+    grid-area: na;
+    background-color: #406E8E;
+}
+
+article {
+    grid-area: ar;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: #23395B;
+}
+
+.products {
+    width: 100%;
+    background-color: #406E8E;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.products img {
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+/*    margin: 5px; inkább szülő elemre padding, mert nincs benne a box-sizing-ben a margin */
+}
+
+.product_description {
+    text-align: center;
+}
+
+.buy_button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+}
+
+.button {
+    background-color: #23395B;
+    border:1px solid white;
+    border-radius:5px;
+    text-align: center;
+}
+
+.price {
+    text-align: right;
+}
+
+
+aside {
+    grid-area: as;
+    background-color: #406E8E;
+}
+
+footer {
+    grid-area: fo;
+    background-color: #406E8E;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    font-size: calc(16px + 1.6vw);
+    font-weight: bold; 
+}
+
+h2 {
+    text-align: center;
+    font-size: calc(12px + 0.8vw);
+    font-weight: bold;
+
+}
+
+p {
+    font-size: calc(10px + 0.4vw);
+    white-space: nowrap;
+}
+
+@media screen and (max-width:1000px) {
+    main {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:    "he  he"
+                                "na  na"
+                                "ar  as"
+                                "fo  fo";
+    }
+    article {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:    "he"
+                                "na"
+                                "as"
+                                "ar"
+                                "fo"; /* mindig meg kell adni minden gyereket */
+    }
+    article {
+        grid-template-columns: 1fr;
+    }
+}
